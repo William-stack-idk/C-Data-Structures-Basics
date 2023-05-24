@@ -1,0 +1,6 @@
+#Ignore all object files
+*.o
+#Igonre all build files
+*.exe
+#Ignore VSCODE settings
+.vscode
