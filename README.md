@@ -26,4 +26,8 @@ I believe in the power of collaboration and welcome your contributions to this p
 
 Let's embark on this coding adventure together, explore the world of data structures in C, and unlock new possibilities in software development!
 
+## License
+
+This project is licensed under the [MIT License](LICENSE.md), which allows you to freely use, modify, and distribute the code while providing some liability protection.
+
 **#CProgramming #DataStructures #OpenSource #ProgrammingCommunity**
