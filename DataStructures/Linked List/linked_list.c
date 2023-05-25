@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "linked-list.h"
+#include "linked_list.h"
 
 LinkedList *create_linkedList()
 {
@@ -52,6 +52,7 @@ int add_last(LinkedList *list, int value)
         return 0;
     }
     list->tail->next = ptr;
+    list->tail = ptr;
     return 0;
 }
 
@@ -68,11 +69,10 @@ int clear(LinkedList *list)
         current = next;
     }
     list->head = list->tail = NULL;
-    free(list);
     return 0;
 }
 
-int contains(int value, LinkedList *list)
+int contains(LinkedList *list, int value)
 {
     if (!list)
         return -1;
@@ -86,7 +86,7 @@ int contains(int value, LinkedList *list)
     return 0;
 }
 
-Node *find(int value, LinkedList *list)
+Node *find(LinkedList *list, int value)
 {
     if (!list)
         return -1;
@@ -100,7 +100,7 @@ Node *find(int value, LinkedList *list)
     return NULL;
 }
 
-int remove_node(int value, LinkedList *list)
+int remove_node(LinkedList *list, int value)
 {
     if (!list)
         return -1;
@@ -117,6 +117,7 @@ int remove_node(int value, LinkedList *list)
         if (next->value == value)
         {
             current->next = next->next;
+            free(next);
             return 0;
         }
         current = next;
@@ -127,6 +128,8 @@ int remove_node(int value, LinkedList *list)
 
 int print_list(LinkedList *list)
 {
+    if (!list)
+        return -1;
     Node *temp = list->head;
     while (temp != NULL)
     {
